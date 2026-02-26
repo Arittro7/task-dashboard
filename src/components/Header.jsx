@@ -4,7 +4,7 @@ import user from "../assets/user.png";
 const Header = () => {
   return (
     <div>
-      <div className="bg-gray-200 p-4 flex items-center justify-between shadow-md">
+      <div className="bg-gray-100 ml-2 p-4 flex items-center justify-between shadow-md">
         <div className="relative flex-1 max-w-md">
           <input
             type="text"
@@ -38,13 +38,13 @@ const Header = () => {
           <h1 className="text-3xl text-left font-bold text-gray-800 ml-6">
             Dashboard
           </h1>
-          <p className="text-sm ml-6 text-gray-500 mb-6">Plan, prioritize, and accomplish your tasks with ease.</p>
+          <p className="text-sm ml-6 mt-3 text-gray-500 mb-6">Plan, prioritize, and accomplish your tasks with ease.</p>
         </div>
         <div className="flex space-x-2">
-          <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-medium hover:bg-darkPrimary transition">
+          <button className="bg-[#1d734c] text-white px-4 py-2 rounded-full font-medium hover:bg-darkPrimary transition">
             + Add Project
           </button>
-          <button className="bg-white border border-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">
+          <button className="bg-white border border-gray-300 text-gray-800 px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition">
             Import Data
           </button>
         </div>
