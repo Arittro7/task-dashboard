@@ -44,7 +44,7 @@ const Dashboard = () => {
       />
 
       <div className="flex-1 flex flex-col">
-        {/* Mobile top bar */}
+        {/* 🚀 Mobile top bar */}
         <div className="lg:hidden bg-white shadow-sm px-4 py-3.5 flex items-center justify-between sticky top-0 z-40">
           <button
             onClick={() => setSidebarOpen(true)}
@@ -69,7 +69,7 @@ const Dashboard = () => {
           <div className="px-4 sm:px-6 lg:px-8 pt-6">
             <Header />
 
-            {/* Stats cards */}
+            {/* 🚀 Stats cards */}
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-6 mb-8">
               <StatCard title="Total Projects" value={24} change="5%" isGreen={true} />
               <StatCard title="Ended Projects" value={10} change="6%" />
@@ -77,7 +77,7 @@ const Dashboard = () => {
               <StatCard title="Pending Project" value={2} change="On Discuss" isTextChange />
             </div>
 
-            {/* Main responsive grid */}
+            {/* 🚀 Main responsive grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
               {/* Left + center content */}
               <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-9 gap-5 lg:gap-6">

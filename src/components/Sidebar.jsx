@@ -1,4 +1,3 @@
-// Sidebar.jsx
 import {
   AiFillDashboard,
   AiOutlineFileText,
@@ -31,7 +30,7 @@ const Sidebar = ({ logout, isOpen, onClose }) => {
     <>
       <div className="text-[#1d734c] font-bold text-2xl mb-10">Arittro</div>
 
-      <p className="text-gray-500 text-xs uppercase font-semibold mb-4 tracking-wider">MENU</p>
+      <p className="text-gray-500 text-xs text-left uppercase font-semibold mb-4 tracking-wider">MENU</p>
       <ul className="space-y-2 mb-10">
         {menuItems.map((item, i) => (
           <li
@@ -53,7 +52,7 @@ const Sidebar = ({ logout, isOpen, onClose }) => {
         ))}
       </ul>
 
-      <p className="text-gray-500 text-xs uppercase font-semibold mb-4 tracking-wider">GENERAL</p>
+      <p className="text-gray-500 text-xs text-left uppercase font-semibold mb-4 tracking-wider">GENERAL</p>
       <ul className="space-y-2">
         {generalItems.map((item, i) => (
           <li
@@ -86,12 +85,12 @@ const Sidebar = ({ logout, isOpen, onClose }) => {
 
   return (
     <>
-      {/* DESKTOP sidebar - hidden on mobile */}
+      {/* 🚀 DESKTOP sidebar - hidden on mobile */}
       <div className="hidden lg:flex lg:w-72 lg:shrink-0 lg:flex-col lg:bg-gray-100 lg:h-screen lg:p-6 lg:overflow-y-auto">
         {sidebarContent}
       </div>
 
-      {/* MOBILE drawer */}
+      {/* 🚀 MOBILE drawer */}
       <div
         className={`
           fixed inset-0 z-50 lg:hidden transition-transform duration-300 ease-in-out

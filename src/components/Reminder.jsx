@@ -3,7 +3,9 @@ import { TiVideo } from "react-icons/ti";
 const Reminder = () => {
   return (
     <div className="bg-white text-left p-6 rounded-xl shadow-md flex flex-col h-full">
-      <h3 className="text-gray-800 text-2xl text-left font-semibold mb-4">Reminders</h3>
+      <h3 className="text-gray-800 text-2xl text-left font-semibold mb-4">
+        Reminders
+      </h3>
       <div className="p-4 rounded-lg flex flex-col flex-grow">
         <div className="flex-grow">
           <p className="font-semibold text-3xl ">Meeting with Oct Company</p>

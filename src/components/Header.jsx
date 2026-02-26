@@ -1,11 +1,12 @@
-// Header.jsx
 import { AiOutlineMail, AiOutlineBell } from "react-icons/ai";
 import user from "../assets/user.png";
 
 const Header = () => {
   return (
     <div className="space-y-5 md:space-y-6">
-      {/* Top row: search + icons + profile (mobile: stack or compact) */}
+
+      {/* 🚀 Top row: search + icons + profile (mobile: stack or compact) */}
+
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         {/* Search */}
         <div className="relative w-full sm:max-w-xs md:max-w-md">
@@ -21,7 +22,7 @@ const Header = () => {
           </span>
         </div>
 
-        {/* User area – icons + avatar + name (compact on mobile) */}
+        {/* 🚀 User area – icons + avatar + name (compact on mobile) */}
         <div className="flex items-center justify-between sm:justify-end gap-4 w-full sm:w-auto">
           {/* Icons */}
           <div className="flex items-center gap-3 sm:gap-4">
@@ -29,7 +30,7 @@ const Header = () => {
             <AiOutlineBell className="text-gray-600 text-xl sm:text-2xl cursor-pointer" />
           </div>
 
-          {/* Avatar + name/email – shrink text on small screens */}
+          {/* 🚀 Avatar + name/email – shrink text on small screens */}
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-orange-400 flex items-center justify-center shrink-0">
               <img
@@ -51,7 +52,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Bottom row: Dashboard title + subtitle + action buttons */}
+      {/* 🚀 Bottom row: Dashboard title + subtitle + action buttons */}
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-left">
@@ -62,7 +63,7 @@ const Header = () => {
           </p>
         </div>
 
-        {/* Action buttons – stack on very small screens, side-by-side otherwise */}
+        {/* 🚀 Action buttons – stack on very small screens, side-by-side otherwise */}
         <div className="flex flex-wrap gap-3">
           <button className="bg-[#1d734c] text-white px-5 py-2.5 rounded-full font-medium text-sm sm:text-base hover:bg-[#185c3d] transition whitespace-nowrap">
             + Add Project
