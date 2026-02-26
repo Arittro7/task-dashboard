@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-// Dashboard.jsx
 import { useEffect, useState, useContext } from "react";
 import { motion } from "framer-motion";
 import api from "../utils/api";
@@ -56,13 +55,13 @@ const Dashboard = () => {
 
           <div className="font-bold text-xl text-[#1d734c]">Arittro</div>
 
-          <div className="w-9 h-9 rounded-full bg-orange-400 flex items-center justify-center">
+          {/* <div className="w-9 h-9 rounded-full bg-orange-400 flex items-center justify-center">
             <img
               src="/path/to/user.png"
               alt="user"
               className="w-8 h-8 rounded-full object-cover"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Scrollable main content */}
