@@ -1,23 +1,34 @@
+import { AiOutlineCode, AiOutlineGlobal, AiOutlineFormatPainter, AiOutlineThunderbolt } from "react-icons/ai";
+
 const ProjectList = ({ projects }) => {
-  const projectData = projects.slice(0, 4).map((proj, index) => ({
-    name: proj.name,
-    dueDate: ['Nov 20, 2024', 'Nov 28, 2024', 'Nov 30, 2024', 'Dec 6, 2024'][index],
-    icon: ['blue-icon.svg', 'green-icon.svg', 'yellow-icon.svg', 'purple-icon.svg'][index],  // Add to public
-  }));
+  // Using a mix of real data and design-specific icons
+  const icons = [AiOutlineCode, AiOutlineGlobal, AiOutlineFormatPainter, AiOutlineThunderbolt];
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-gray-800 text-2xl font-semibold">Project</h3>
-        <button className="text-primary font-medium border-2 rounded-full bg-gray-100 px-3 py-1">+ New</button>
+    <div className="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 h-full flex flex-col">
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-gray-800 text-xl font-bold">Project</h3>
+        <button className="text-gray-500 text-xs font-semibold border border-gray-200 rounded-full px-3 py-1 hover:bg-gray-50 transition">
+          + New
+        </button>
       </div>
-      {projectData.map((proj, idx) => (
-        <div key={idx} className="flex items-center mb-4">
-          <img src={proj.icon} alt="Icon" className="w-6 h-6 mr-3" />  {/* Real icons */}
-          <p className="flex-1 text-gray-800 font-medium">{proj.name}</p>
-          <p className="text-sm text-gray-500">Due date: {proj.dueDate}</p>
-        </div>
-      ))}
+      
+      <div className="space-y-6">
+        {projects.slice(0, 5).map((proj, idx) => {
+          const Icon = icons[idx % icons.length];
+          return (
+            <div key={idx} className="flex items-center gap-4">
+              <div className="p-2 rounded-xl bg-gray-50 text-[#1d734c]">
+                <Icon size={20} />
+              </div>
+              <div className="flex-1 text-left">
+                <p className="text-sm font-bold text-gray-800 leading-tight">{proj.name}</p>
+                <p className="text-[11px] text-gray-400 mt-0.5">Due date: {proj.dueDate || "Nov 24, 2024"}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
