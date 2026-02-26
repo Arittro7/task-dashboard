@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
+// Dashboard.jsx
 import { useEffect, useState, useContext } from "react";
+import { motion } from "framer-motion";
 import api from "../utils/api";
 import { AuthContext } from "../context/AuthContext";
 import Sidebar from "../components/Sidebar";
@@ -11,10 +13,10 @@ import ProjectList from "../components/ProjectList";
 import TeamCollaboration from "../components/TeamCollaboration";
 import ProgressCircle from "../components/ProgressCircle";
 import TimeTracker from "../components/TimeTracker";
-import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const { logout } = useContext(AuthContext);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [data, setData] = useState({
     overview: {},
     users: [],
@@ -28,61 +30,88 @@ const Dashboard = () => {
         const res = await api.get("/dashboard");
         setData(res.data);
       } catch (err) {
-        console.error(err);
+        console.error("Dashboard data fetch failed", err);
       }
     };
     fetchData();
   }, []);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      className="flex h-screen bg-[#F8F9FA] overflow-hidden"
-    >
-      <Sidebar logout={logout} />
-      
-      <div className="flex-1 overflow-y-auto no-scrollbar p-8">
-        <Header />
-        
-        {/* Stats Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-6">
-          <StatCard title="Total Projects" value={24} change="5%" isGreen={true} />
-          <StatCard title="Ended Projects" value={10} change="6%" />
-          <StatCard title="Running Projects" value={12} change="2%" />
-          <StatCard title="Pending Project" value={2} change="On Discuss" isText />
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar
+        logout={logout}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
+
+      <div className="flex-1 flex flex-col">
+        {/* Mobile top bar */}
+        <div className="lg:hidden bg-white shadow-sm px-4 py-3.5 flex items-center justify-between sticky top-0 z-40">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="text-2xl text-gray-700"
+          >
+            ☰
+          </button>
+
+          <div className="font-bold text-xl text-[#1d734c]">Arittro</div>
+
+          <div className="w-9 h-9 rounded-full bg-orange-400 flex items-center justify-center">
+            <img
+              src="/path/to/user.png"
+              alt="user"
+              className="w-8 h-8 rounded-full object-cover"
+            />
+          </div>
         </div>
 
-        {/* Main Grid: 12 Columns */}
-        <div className="grid grid-cols-12 gap-6">
-          
-          {/* Left/Middle Content (Col 1-9) */}
-          <div className="col-span-9 grid grid-cols-9 gap-6">
-            <div className="col-span-6">
-              <BarChart data={data.analytics} />
+        {/* Scrollable main content */}
+        <div className="flex-1 overflow-y-auto pb-8">
+          <div className="px-4 sm:px-6 lg:px-8 pt-6">
+            <Header />
+
+            {/* Stats cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-6 mb-8">
+              <StatCard title="Total Projects" value={24} change="5%" isGreen={true} />
+              <StatCard title="Ended Projects" value={10} change="6%" />
+              <StatCard title="Running Projects" value={12} change="2%" />
+              <StatCard title="Pending Project" value={2} change="On Discuss" isTextChange />
             </div>
-            <div className="col-span-3">
-              <Reminder />
-            </div>
-            <div className="col-span-5">
-              <TeamCollaboration users={data.users} />
-            </div>
-            <div className="col-span-4">
-              <ProgressCircle value={41} />
+
+            {/* Main responsive grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
+              {/* Left + center content */}
+              <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-9 gap-5 lg:gap-6">
+                <div className="md:col-span-6">
+                  <BarChart data={data.analytics} />
+                </div>
+                <div className="md:col-span-3">
+                  <Reminder />
+                </div>
+
+                <div className="md:col-span-5">
+                  <TeamCollaboration users={data.users} />
+                </div>
+
+                <div className="md:col-span-4">
+                  <ProgressCircle value={41} />
+                </div>
+              </div>
+
+              {/* Right column → becomes bottom section on mobile */}
+              <div className="lg:col-span-3 flex flex-col gap-5 lg:gap-6">
+                <div className="flex-1">
+                  <ProjectList projects={data.products} />
+                </div>
+                <div>
+                  <TimeTracker />
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Right Column: Tall Project List & Tracker (Col 10-12) */}
-          <div className="col-span-3 flex flex-col gap-6">
-            <div className="flex-grow">
-              <ProjectList projects={data.products} />
-            </div>
-            <TimeTracker />
-          </div>
-
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
