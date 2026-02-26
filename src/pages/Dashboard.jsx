@@ -42,21 +42,33 @@ const Dashboard = () => {
   };
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="flex h-screen bg-lightBg overflow-hidden"
     >
       <Sidebar logout={logout} />
       <div className="flex-1 overflow-y-auto no-scrollbar">
         <Header />
         <div className="p-6">
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <StatCard title="Total Projects" value={stats.totalProjects} change="+2" isGreen={true} />
+            <StatCard
+              title="Total Projects"
+              value={stats.totalProjects}
+              change="+2"
+              isGreen={true}
+            />
             <StatCard title="Ended Projects" value={stats.ended} change="+1" />
-            <StatCard title="Running Projects" value={stats.running} change="+3" />
-            <StatCard title="Pending Project" value={stats.pending} change="0" />
+            <StatCard
+              title="Running Projects"
+              value={stats.running}
+              change="+3"
+            />
+            <StatCard
+              title="Pending Project"
+              value={stats.pending}
+              change="0"
+            />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             <BarChart data={data.analytics} />
@@ -71,7 +83,7 @@ const Dashboard = () => {
           <div className="bg-darkPrimary text-white p-6 rounded-xl shadow-md max-w-sm">
             <h3 className="font-bold mb-2">Download Our Mobile App</h3>
             <p className="text-sm mb-4">Get easy in App way.</p>
-            <button className="bg-primary text-white px-4 py-2 rounded-lg font-medium w-full">
+            <button className="bg-[#1d734c] text-white px-4 py-2 rounded-lg font-medium w-full">
               Download
             </button>
           </div>

@@ -1,29 +1,27 @@
-import { AiOutlineArrowUp } from "react-icons/ai";
+import { AiOutlineArrowUp  } from "react-icons/ai";
 
 const StatCard = ({ title, value, change, isGreen }) => {
   return (
     <div
-      className={`p-4 rounded-xl shadow-md ${isGreen ? "bg-primary text-black" : "bg-white text-gray-800"}`}
+      className={`p-4 rounded-xl h-40 shadow-md ${isGreen ? "bg-[#1d734c] text-black" : "bg-white text-gray-800"}`}
     >
       <div className="flex justify-between items-center mb-2">
         <h3
-          className={`${isGreen ? "text-black" : "text-gray-600"} font-medium`}
+          className={`text-2xl font-semibold ${isGreen ? "text-white" : "text-gray-600"} font-medium`}
         >
           {title}
         </h3>
-        <AiOutlineArrowUp
-          className={`${change.startsWith("+") ? "text-green-400" : "text-gray-400"} text-sm`}
-        />
+        <AiOutlineArrowUp className="bg-white rounded-full w-7 h-7 p-1 rotate-45 "/>
       </div>
       <p
-        className={`text-4xl font-bold ${isGreen ? "text-black" : "text-primary"}`}
+        className={`text-6xl text-left font-bold ${isGreen ? "text-white" : "text-primary"}`}
       >
         {value}
       </p>
       <p
-        className={`${isGreen ? "text-green-200" : "text-green-500"} text-sm mt-1`}
+        className={`text-left mt-2 ${isGreen ? "text-green-200" : "text-green-500"} text-sm mt-1`}
       >
-        {change} Increased from last month
+       <span className="border-2 p-1 rounded-sm">{change}</span>  Increased from last month
       </p>
     </div>
   );
