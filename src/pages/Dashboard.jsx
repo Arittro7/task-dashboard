@@ -48,7 +48,7 @@ const Dashboard = () => {
       className="flex h-screen bg-lightBg overflow-hidden"
     >
       <Sidebar logout={logout} />
-      <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div className="flex-1 ml-3 bg-gray-100 overflow-y-auto no-scrollbar">
         <Header />
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
@@ -79,13 +79,6 @@ const Dashboard = () => {
             <TeamCollaboration users={data.users} />
             <ProgressCircle value={41} />
             <TimeTracker />
-          </div>
-          <div className="bg-darkPrimary text-white p-6 rounded-xl shadow-md max-w-sm">
-            <h3 className="font-bold mb-2">Download Our Mobile App</h3>
-            <p className="text-sm mb-4">Get easy in App way.</p>
-            <button className="bg-[#1d734c] text-white px-4 py-2 rounded-lg font-medium w-full">
-              Download
-            </button>
           </div>
         </div>
       </div>

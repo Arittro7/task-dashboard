@@ -21,7 +21,7 @@ const StatCard = ({ title, value, change, isGreen }) => {
       <p
         className={`text-left mt-2 ${isGreen ? "text-green-200" : "text-green-500"} text-sm mt-1`}
       >
-       <span className="border-2 p-1 rounded-sm">{change}</span>  Increased from last month
+       <span className="border-2 px-1 rounded-sm">{change}</span>  Increased from last month
       </p>
     </div>
   );

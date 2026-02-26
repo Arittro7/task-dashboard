@@ -1,12 +1,22 @@
+import bgImg from '../assets/bgImg.png'
+import { FaPause, FaStop } from "react-icons/fa6";
+
 const TimeTracker = () => {
+
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md">
-      <h3 className="text-gray-800 font-medium mb-4">Time Tracker</h3>
-      <p className="text-4xl font-bold text-gray-800 text-center">01:24:08</p>
-      <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-full w-full flex justify-center items-center">
-        <span className="mr-2">⏸</span> Pause
-      </button>
-    </div>
+    <div
+            className="mt-32 text-white text-2xl text-left p-3 rounded-xl bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${bgImg})`,
+            }}
+          >
+            <h1 className="text-3xl font-semibold mt-2">Time Tracker</h1>
+            <p className="text-5xl font-bold text-center mt-10">01:24:08</p>
+            <div className='flex items-center justify-center mt-2 gap-2'>
+              <FaPause className='bg-white text-black rounded-full p-1'/>
+              <FaStop className='bg-red-500 rounded-full p-1'/>
+            </div>
+          </div>
   );
 };
 

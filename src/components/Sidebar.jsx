@@ -14,26 +14,26 @@ import bgImg from "../assets/bgImg.png";
 const Sidebar = ({ logout }) => {
   return (
     <div className="w-72 bg-gray-100 h-screen p-6 flex flex-col rounded-r-2xl">
-      <div className="text-primary font-bold text-xl mb-8">Arittro</div>
+      <div className="text-[#1d734c] font-bold text-xl mb-8">Arittro</div>
       <p className="text-gray-500 text-sm text-left font-semibold mb-4">MENU</p>
       <ul className="space-y-4">
-        <li className="flex items-center text-[#1d734c] font-medium cursor-pointer pl-4 border-l-7 border-primary  bg-white rounded-r-lg py-2">
-          <AiFillDashboard className="mr-3 text-primary " /> Dashboard
+        <li className="flex items-center text-[#1d734c] font-medium cursor-pointer pl-4 border-l-7 border-[#1d734c]  bg-white rounded-r-lg py-2">
+          <AiFillDashboard className="mr-3 text-[#1d734c] " /> Dashboard
         </li>
         <li className="flex items-center text-gray-800 font-medium cursor-pointer relative pl-4">
-          <AiOutlineFileText className="mr-3 text-primary" /> Tasks
+          <AiOutlineFileText className="mr-3 text-[#1d734c]" /> Tasks
           <span className="absolute right-0 bg-[#1d734c] text-white text-xs px-2 py-1 rounded-full">
             12
           </span>
         </li>
         <li className="flex items-center text-gray-800 font-medium cursor-pointer pl-4">
-          <AiFillCalendar className="mr-3 text-primary" /> Calendar
+          <AiFillCalendar className="mr-3 text-[#1d734c]" /> Calendar
         </li>
         <li className="flex items-center text-gray-800 font-medium cursor-pointer pl-4">
-          <AiOutlineBarChart className="mr-3 text-primary" /> Analytics
+          <AiOutlineBarChart className="mr-3 text-[#1d734c]" /> Analytics
         </li>
         <li className="flex items-center text-gray-800 font-medium cursor-pointer pl-4">
-          <AiOutlineTeam className="mr-3 text-primary" /> Team
+          <AiOutlineTeam className="mr-3 text-[#1d734c]" /> Team
         </li>
       </ul>
       <p className="text-gray-500 text-sm text-left font-semibold mt-8 mb-4">
@@ -41,16 +41,16 @@ const Sidebar = ({ logout }) => {
       </p>
       <ul className="space-y-4">
         <li className="flex items-center text-gray-800 font-medium cursor-pointer pl-4">
-          <AiOutlineSetting className="mr-3 text-primary" /> Settings
+          <AiOutlineSetting className="mr-3 text-[#1d734c]" /> Settings
         </li>
         <li className="flex items-center text-gray-800 font-medium cursor-pointer pl-4">
-          <AiOutlineQuestionCircle className="mr-3 text-primary" /> Help
+          <AiOutlineQuestionCircle className="mr-3 text-[#1d734c]" /> Help
         </li>
         <li
           onClick={logout}
           className="flex items-center text-gray-800 font-medium cursor-pointer pl-4"
         >
-          <AiOutlineLogout className="mr-3 text-primary" /> Logout
+          <AiOutlineLogout className="mr-3 text-[#1d734c]" /> Logout
         </li>
       </ul>
 
